@@ -6,7 +6,7 @@
  * 3. Apps decorativas: zoom + bounce cuando cada una entra en pantalla.
  * 4. Título: líneas punteadas se dibujan progresivamente (clip-path).
  *
- * El slider de logos ya no vive acá: es el bloque `onlines/slider-logos`, que
+ * El slider de logos ya no vive acá: es el bloque `cadence/slider-logos`, que
  * este bloque renderiza por código y trae su propio view script.
  *
  * CONFIGURACIÓN DE ANIMACIÓN DE TARJETAS:

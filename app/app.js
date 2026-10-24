@@ -305,7 +305,7 @@
   }
 
   // Per-section art direction: hero photo (same as the showcase card), colours, giant title, pills.
-  var IMG = "../two26-studio/assets/";
+  var IMG = "../showcase/assets/";
   var META = {
     capture: { img: "6ab392697fe7cc9c077d1bb5_HeyGluco_2_hover.jpg", bg: "#f6c9c7", accent: "#ff5400", title: "Capture", pills: ["P1 · Student attendee", "Notes + reflection", "After the event"], tags: ["Event reflection", "Notes & takeaways", "Quick capture"] },
     review: { img: "6ab270be80849a0a23faa284_6ab270907f6e9d96146209a1_MVP_Thumbnail1.jpeg", bg: "#9a9a9a", accent: "#153fe3", title: "AI Review", pills: ["AI · Action engine", "Human approval", "Zero invention"], tags: ["Smart extraction", "Source-linked", "You decide"] },
@@ -1113,6 +1113,20 @@
 
   /* ---------------- boot ---------------- */
   state = load();
+  // Arriving from an event card on the showcase (?event=Name): open that event, creating it once.
+  (function () {
+    var name = "";
+    try { name = (new URLSearchParams(location.search).get("event") || "").trim(); } catch (e) { /* old browser */ }
+    if (!name) return;
+    var ev = state.events.filter(function (e) { return e.name.toLowerCase() === name.toLowerCase(); })[0];
+    if (!ev) {
+      ev = { id: uid("ev"), name: name, date: now(), type: "Event", goal: "", created: now() };
+      state.events.unshift(ev);
+      logEvent("Opened “" + name + "” from the showcase");
+    }
+    state.currentEventId = ev.id;
+    if (history.replaceState) history.replaceState(null, "", location.pathname + (location.hash || "#capture"));
+  })();
   save();
   render(true, true);
   Motion.loader(function () { Motion.enter(true); });

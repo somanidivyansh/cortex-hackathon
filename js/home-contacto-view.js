@@ -220,7 +220,7 @@
            el cursor antes. */
         var dots = block.querySelector(DOTS_SELECTOR);
         if (dots) {
-            window.onlinesPatronPuntos.init({ contenedor: dots });
+            window.cadencePatronPuntos.init({ contenedor: dots });
         }
 
         var cards    = block.querySelectorAll(CARD_SELECTOR);

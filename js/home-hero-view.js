@@ -104,14 +104,14 @@
     }
 
     function stopLenisDuringScrollLock() {
-        if (window.onlinesLenis && typeof window.onlinesLenis.stop === 'function') {
-            window.onlinesLenis.stop();
+        if (window.cadenceLenis && typeof window.cadenceLenis.stop === 'function') {
+            window.cadenceLenis.stop();
         }
-        emitLenisControl('onlines:lenis-stop');
+        emitLenisControl('cadence:lenis-stop');
     }
 
     function startLenisAfterScrollLock() {
-        emitLenisControl('onlines:lenis-start');
+        emitLenisControl('cadence:lenis-start');
     }
 
     /* =========================================================
@@ -174,9 +174,9 @@
        un div por celda. */
     function initInteractiveGrid(hero) {
         var gridContainer = hero.querySelector(GRID_SELECTOR);
-        if (!gridContainer || !window.onlinesGrillaCeldas) return;
+        if (!gridContainer || !window.cadenceGrillaCeldas) return;
 
-        window.onlinesGrillaCeldas.init({ contenedor: gridContainer });
+        window.cadenceGrillaCeldas.init({ contenedor: gridContainer });
     }
 
     /* ---- Init ---- */

@@ -25,9 +25,9 @@
        listener. Antes había un div y un mouseenter por celda (~300 de cada uno). */
     function initInteractiveGrid(bloque) {
         var gridContainer = bloque.querySelector(GRID_SELECTOR);
-        if (!gridContainer || !window.onlinesGrillaCeldas) return;
+        if (!gridContainer || !window.cadenceGrillaCeldas) return;
 
-        window.onlinesGrillaCeldas.init({ contenedor: gridContainer });
+        window.cadenceGrillaCeldas.init({ contenedor: gridContainer });
     }
 
     /* ---- Inicialización del bloque ---- */

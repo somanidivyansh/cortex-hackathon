@@ -3,11 +3,11 @@
 const LENIS_SCROLL_LOCK_CLASS = 'is-hero-scroll-lock';
 
 const stopLenis = () => {
-    if (!window.onlinesLenis || typeof window.onlinesLenis.stop !== 'function') {
+    if (!window.cadenceLenis || typeof window.cadenceLenis.stop !== 'function') {
         return;
     }
 
-    window.onlinesLenis.stop();
+    window.cadenceLenis.stop();
 };
 
 const startLenis = () => {
@@ -15,13 +15,13 @@ const startLenis = () => {
 
     if (
         root.classList.contains(LENIS_SCROLL_LOCK_CLASS) ||
-        !window.onlinesLenis ||
-        typeof window.onlinesLenis.start !== 'function'
+        !window.cadenceLenis ||
+        typeof window.cadenceLenis.start !== 'function'
     ) {
         return;
     }
 
-    window.onlinesLenis.start();
+    window.cadenceLenis.start();
 };
 
 const initLenis = () => {
@@ -31,7 +31,7 @@ const initLenis = () => {
         return;
     }
 
-    window.onlinesLenis = new window.Lenis({
+    window.cadenceLenis = new window.Lenis({
         autoRaf: true,
         smoothWheel: true,
         syncTouch: false,
@@ -43,8 +43,8 @@ const initLenis = () => {
     }
 };
 
-window.addEventListener('onlines:lenis-stop', stopLenis);
-window.addEventListener('onlines:lenis-start', startLenis);
+window.addEventListener('cadence:lenis-stop', stopLenis);
+window.addEventListener('cadence:lenis-start', startLenis);
 
 initLenis();
 

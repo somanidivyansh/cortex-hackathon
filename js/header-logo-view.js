@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!smallContainer || !fullContainer || !dot || !bar) return;
 
-        // Smooth quick reveal of the full "onlines" brand logo
+        // Smooth quick reveal of the full "cadence" brand logo
         setTimeout(() => {
             bar.classList.add('header-logo--blink');
             setTimeout(() => {

@@ -1,20 +1,20 @@
-/* Cadence app — canvas UI in the language of the showcase page (two26-studio):
+/* Cadence app — canvas UI in the language of the showcase page (showcase):
    cream paper, orange type, giant display titles, pills, squiggles and soft motion. */
 @font-face {
   font-family: "Nichrome";
-  src: url("../two26-studio/fonts/6aaad679fdb9d914f7f52051_MDNichromeTest-Bold.woff") format("woff");
+  src: url("../showcase/fonts/6aaad679fdb9d914f7f52051_MDNichromeTest-Bold.woff") format("woff");
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: "Neue Montreal";
-  src: url("../two26-studio/fonts/6aaad679fdb9d914f7f52053_NeueMontreal-Regular.otf") format("opentype");
+  src: url("../showcase/fonts/6aaad679fdb9d914f7f52053_NeueMontreal-Regular.otf") format("opentype");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Neue Montreal";
-  src: url("../two26-studio/fonts/6aaad679fdb9d914f7f52054_NeueMontreal-Medium.otf") format("opentype");
+  src: url("../showcase/fonts/6aaad679fdb9d914f7f52054_NeueMontreal-Medium.otf") format("opentype");
   font-weight: 500 700;
   font-display: swap;
 }

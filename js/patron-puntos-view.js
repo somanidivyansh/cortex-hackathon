@@ -7,7 +7,7 @@
  *
  * Uso desde el -view.js de un bloque:
  *
- *     window.onlinesPatronPuntos.init({ contenedor: elemento });
+ *     window.cadencePatronPuntos.init({ contenedor: elemento });
  *
  * El contenedor debe tener la clase patron-puntos y estar posicionado.
  */
@@ -84,5 +84,5 @@
         });
     }
 
-    window.onlinesPatronPuntos = { init: init };
+    window.cadencePatronPuntos = { init: init };
 })();

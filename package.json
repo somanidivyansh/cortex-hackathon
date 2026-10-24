@@ -1,24 +1,14 @@
 {
-  "name": "onlines-frontend-replica",
+  "name": "cadence-after-the-event",
   "version": "1.0.0",
-  "description": "Pixel-perfect frontend replica of https://onlines.com.ar/ with interactive Figma multi-player cursors, grid canvas, 3D halftone WebGL shaders, Lenis smooth scroll, typing code editor, and bilingual support.",
+  "description": "Cadence: After the Event. Turn what you felt at an event into what you do next. A canvas-style frontend by Team Cortex.",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 3000",
     "dev": "python -m http.server 3000",
     "serve": "npx serve ."
   },
-  "keywords": [
-    "onlines",
-    "agency",
-    "frontend",
-    "interactive",
-    "canvas",
-    "figma-cursors",
-    "webgl",
-    "lenis",
-    "swiper"
-  ],
-  "author": "Antigravity",
+  "keywords": ["after-the-event", "cadence", "team-cortex", "drag-and-drop", "gsap"],
+  "author": "Team Cortex",
   "license": "MIT"
 }

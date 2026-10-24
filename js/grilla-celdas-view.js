@@ -6,7 +6,7 @@
  *
  * Uso desde el -view.js de un bloque:
  *
- *     window.onlinesGrillaCeldas.init({ contenedor: elemento });
+ *     window.cadenceGrillaCeldas.init({ contenedor: elemento });
  *
  * El contenedor debe tener la clase grilla-celdas y estar posicionado.
  */
@@ -142,5 +142,5 @@
         });
     }
 
-    window.onlinesGrillaCeldas = { init: init };
+    window.cadenceGrillaCeldas = { init: init };
 })();

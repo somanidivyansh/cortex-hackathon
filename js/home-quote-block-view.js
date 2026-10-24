@@ -110,8 +110,8 @@
         if (!block) return;
 
         var dots = block.querySelector(DOTS_SELECTOR);
-        if (dots && window.onlinesPatronPuntos) {
-            window.onlinesPatronPuntos.init({ contenedor: dots });
+        if (dots && window.cadencePatronPuntos) {
+            window.cadencePatronPuntos.init({ contenedor: dots });
         }
 
         initTextReveal(block);
