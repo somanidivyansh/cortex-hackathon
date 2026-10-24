@@ -1,19 +1,20 @@
 {
-  "name": "two26-studio-replica",
+  "name": "after-the-event-studio",
   "version": "1.0.0",
-  "description": "Complete local replica of Two26 Studio (https://two26.studio) with custom GSAP animations, SplitText, DrawSVG, MotionPath, Lenis smooth scrolling, and full assets.",
+  "description": "After the Event — Team Cortex Hackathon Round 1 Concept & Studio Showcase with custom GSAP animations, SplitText, DrawSVG, MotionPath, Lenis smooth scrolling, and complete interactive prototype.",
   "scripts": {
-    "start": "python -m http.server 3001",
-    "dev": "python -m http.server 3001",
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000",
     "serve": "npx serve ."
   },
   "keywords": [
-    "two26-studio",
-    "webflow",
+    "after-the-event",
+    "team-cortex",
+    "hackathon",
     "gsap",
     "lenis",
-    "replica"
+    "cadence"
   ],
-  "author": "Antigravity",
+  "author": "Team Cortex",
   "license": "MIT"
 }

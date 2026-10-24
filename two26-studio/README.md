@@ -1,39 +1,29 @@
-# Two26 Studio - Local Replica
+# After the Event — Team Cortex Studio Showcase
 
-Pixel-perfect, fully-contained replica of [Two26 Studio](https://two26.studio).
+Interactive Product Showcase & Concept Presentation for **After the Event** by **Team Cortex** (Hackathon Round 1).
 
-## Features
-- **All 11 Pages Included**:
-  - Home (`index.html`)
-  - About (`about.html` / `about/index.html`)
-  - Work overview (`work.html` / `work/index.html`)
-  - Case Studies:
-    - Bagel Bar (`work/bagel-bar.html` / `work/bagel-bar/index.html`)
-    - Heygluco (`work/heygluco.html` / `work/heygluco/index.html`)
-    - LPI (`work/lpi.html` / `work/lpi/index.html`)
-    - Merci (`work/merci.html` / `work/merci/index.html`)
-    - Munchies & Cream (`work/munchies-and-cream.html` / `work/munchies-and-cream/index.html`)
-    - MVP (`work/mvp.html` / `work/mvp/index.html`)
-    - Tanti Maria (`work/tanti-maria.html` / `work/tanti-maria/index.html`)
-    - Yum Yum (`work/yum-yum.html` / `work/yum-yum/index.html`)
-- **Libraries & Dynamic Effects**:
-  - GSAP 3.15 + SplitText, ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, CustomEase, CustomBounce
-  - Lenis 1.1.20 smooth scroll
-  - Interactive magnetic buttons and CTA micro-interactions
-  - SVG mask brush hover animations
-  - Testimonial stack interactions and FAQ accordion
-  - Background HTML5 loop videos with fallback posters
-- **Assets**: 100% localized custom fonts, SVGs, images, and Webflow styles.
+## Team Members
+- **Divyansh Somani**
+- **Kaustubh Chowdhury**
+- **Anushka Verma**
+- **Saiyam Aggarwal**
+
+## Core Features & Workflow
+- **Capture & Reflect**: Dedicated post-event intake system connecting notes, voice memos, and guided takeaways.
+- **Organise Insights**: Structured takeaways, idea inbox, and resource links.
+- **Remember People**: Contact cards, conversation context, and active 48-hour follow-up window.
+- **Prioritise Actions**: Source-linked actions, transparent scoring, and the prominent "Do this first" card.
+- **Track Progress**: Real metrics, outcome timeline, and long-term event ROI.
+- **Human Approval**: AI proposes; humans decide. Zero auto-commit without review.
+
+## Tech Stack & Architecture
+- **Animations**: GSAP 3.15, SplitText, ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, CustomEase, CustomBounce
+- **Smooth Scroll**: Lenis 1.1.20
+- **Typography & Theme**: MD Nichrome Bold & Neue Montreal with signature high-contrast orange accent (`#FF5400`) and dark canvas (`#121213`).
 
 ## How to Run
 
-### Option 1: Python
 ```bash
-python -m http.server 3001
+python -m http.server 3000
 ```
-Open [http://localhost:3001](http://localhost:3001).
-
-### Option 2: Node.js / npx
-```bash
-npx serve .
-```
+Open [http://localhost:3000/two26-studio/index.html](http://localhost:3000/two26-studio/index.html).
