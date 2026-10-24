@@ -1,0 +1,283 @@
+/*    Card Noticia    */
+
+.card-noticia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+.card-noticia__imagen {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.card-noticia__imagen picture {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-noticia__imagen img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    pointer-events: none;
+    background-color: #222;
+}
+
+.card-noticia__shader {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    will-change: transform;
+}
+
+.card-noticia__shader,
+.card-noticia__shader .shader__stage,
+.card-noticia__shader .shader__canvas,
+.card-noticia__shader .shader__fallback-image,
+.card-noticia__shader .shader-halftone__stage,
+.card-noticia__shader .shader-halftone__canvas,
+.card-noticia__shader .shader-halftone__fallback-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-noticia__shader .shader__stage,
+.card-noticia__shader .shader-halftone__stage {
+    aspect-ratio: auto;
+    border-radius: inherit;
+    background: transparent;
+    overflow: hidden;
+}
+
+.card-noticia__shader .shader__stage.is-loading::after,
+.card-noticia__shader .shader__stage.is-error::after,
+.card-noticia__shader .shader-halftone__stage.is-loading::after,
+.card-noticia__shader .shader-halftone__stage.is-error::after {
+    display: none;
+    content: none;
+}
+
+.card-noticia:hover .card-noticia__imagen img,
+.card-noticia:focus .card-noticia__imagen img {
+    transition: all 0.4s ease-in-out;
+}
+
+.card-noticia__imagen img {
+    transition: all 0.4s ease-in-out;
+}
+
+.card-noticia__contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 7px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.card-noticia__fecha {
+    font-family: var(--wp--preset--font-family--jetbrains-mono);
+    font-weight: 500;
+    font-size: 10px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--custom-texto-corrido);
+    white-space: nowrap;
+}
+
+.card-noticia__titulo {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--wp--preset--color--custom-titulos);
+    margin: 0;
+    padding: 0;
+}
+
+.card-noticia__titulo-texto {
+    display: inline;
+    padding-bottom: 0.12em;
+    border-bottom: 1px dashed rgba(18, 18, 19, .1);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.card-noticia__titulo-linea {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.card-noticia__titulo-linea + .card-noticia__titulo-linea {
+    margin-top: 0.08em;
+}
+
+.card-noticia__titulo-linea-texto {
+    display: block;
+}
+
+.card-noticia__titulo-puntos {
+    --sq: 1px;
+    --gap: 1px;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: var(--sq);
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(18, 18, 19, 0.1) 0px,
+        rgba(18, 18, 19, 0.1) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    transition: background-image 0.3s ease;
+}
+
+.card-noticia:hover .card-noticia__titulo-puntos,
+.card-noticia:focus .card-noticia__titulo-puntos {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(18, 18, 19, 0.2) 0px,
+        rgba(18, 18, 19, 0.2) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+}
+
+.card-noticia__titulo-measure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    white-space: normal;
+}
+
+.card-noticia__titulo-palabra {
+    display: inline;
+}
+
+.card-noticia__extracto {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.35;
+    color: var(--wp--preset--color--custom-texto-corrido);
+    opacity: 0.75;
+    padding-top: 0px;
+    margin: 0;
+}
+.card-noticia__extracto p {
+    margin: 0;
+}
+
+.card-noticia--sin-fecha .card-noticia__contenido {
+    padding-top: 20px;
+}
+
+.card-noticia:hover .card-noticia__titulo {
+    color: var(--wp--preset--color--custom-azul);
+}
+
+@media (max-width: 1023px) {
+    .card-noticia__imagen {
+        height: 240px;
+    }
+
+    .card-noticia__titulo {
+        font-size: 20px;
+    }
+
+    .card-noticia__extracto {
+        font-size: 14px;
+    }
+}
+
+.card-noticia__titulo {
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-noticia__fecha {
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-noticia__extracto {
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.is-dark .card-noticia__titulo {
+    color: #fff;
+}
+
+body.is-dark .card-noticia__titulo-puntos {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2) 0px,
+        rgba(255, 255, 255, 0.2) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+}
+
+body.is-dark .card-noticia__titulo-texto {
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body.is-dark .card-noticia__fecha {
+    color: var(--wp--preset--color--custom-gris-claro);
+}
+
+body.is-dark .card-noticia__extracto {
+    color: var(--wp--preset--color--custom-gris-claro);
+}
+
+body.is-dark .card-noticia__shader {
+    mix-blend-mode: screen;
+}
+
+body.is-dark .card-noticia:hover .card-noticia__titulo-puntos,
+body.is-dark .card-noticia:focus .card-noticia__titulo-puntos {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.3) 0px,
+        rgba(255, 255, 255, 0.3) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+}

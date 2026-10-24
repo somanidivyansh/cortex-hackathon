@@ -1,0 +1,24 @@
+{
+  "name": "onlines-frontend-replica",
+  "version": "1.0.0",
+  "description": "Pixel-perfect frontend replica of https://onlines.com.ar/ with interactive Figma multi-player cursors, grid canvas, 3D halftone WebGL shaders, Lenis smooth scroll, typing code editor, and bilingual support.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "onlines",
+    "agency",
+    "frontend",
+    "interactive",
+    "canvas",
+    "figma-cursors",
+    "webgl",
+    "lenis",
+    "swiper"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

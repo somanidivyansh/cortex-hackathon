@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Python cache & temp
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# IDE & Tooling
+.vscode/
+.idea/
+.gemini/

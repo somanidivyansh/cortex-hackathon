@@ -1,0 +1,395 @@
+/*    Card Servicio    */
+
+.card-servicio,
+.card-servicio *,
+.card-servicio *::before,
+.card-servicio *::after {
+    box-sizing: border-box;
+}
+
+.card-servicio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0 !important;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ====================================================================
+   Variante vertical
+   ==================================================================== */
+
+.card-servicio--vertical {
+    gap: 25px;
+}
+
+.card-servicio__tarjeta {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    background: var(--wp--preset--color--custom-azul);
+}
+
+.card-servicio__shader {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+}
+
+.card-servicio__shader,
+.card-servicio__shader .shader__stage,
+.card-servicio__shader .shader__canvas,
+.card-servicio__shader .shader__fallback-image,
+.card-servicio__shader .shader-halftone__stage,
+.card-servicio__shader .shader-halftone__canvas,
+.card-servicio__shader .shader-halftone__fallback-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-servicio__shader .shader__stage,
+.card-servicio__shader .shader-halftone__stage {
+    aspect-ratio: auto;
+    border-radius: inherit;
+    background: transparent;
+    overflow: hidden;
+}
+
+.card-servicio__shader .shader__stage.is-loading::after,
+.card-servicio__shader .shader__stage.is-error::after,
+.card-servicio__shader .shader-halftone__stage.is-loading::after,
+.card-servicio__shader .shader-halftone__stage.is-error::after {
+    display: none;
+    content: none;
+}
+
+.card-servicio__textos {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    padding: 54px;
+    width: 100%;
+}
+
+.card-servicio__titulo {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-wrap: balance;
+}
+
+.card-servicio__titulo-texto {
+    display: block;
+}
+
+.card-servicio__titulo-linea {
+    display: block;
+    margin-bottom: 0.12em;
+}
+
+.card-servicio__titulo-linea:last-child {
+    margin-bottom: 0;
+}
+
+.card-servicio__titulo-linea-texto {
+    display: block;
+}
+
+.card-servicio__titulo-puntos {
+    --sq: 1px;
+    --gap: 1px;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: var(--sq);
+    margin-top: -5px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.25) 0px,
+        rgba(255, 255, 255, 0.25) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+}
+
+/* Nodo de medición del view.js: invisible pero con el mismo ancho que el título.
+   El balanceo se define acá, porque el view.js lee de este nodo el corte de cada
+   renglón. Una vez partido el título, cada línea es un bloque de una sola línea
+   y `text-wrap: balance` ya no tiene nada que balancear. */
+.card-servicio__titulo-measure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    white-space: normal;
+    text-wrap: balance;
+}
+
+.card-servicio__titulo-palabra {
+    display: inline;
+}
+
+.card-servicio__descripcion {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #fff;
+    opacity: 0.8;
+    margin: 25px 0 0;
+    padding: 0;
+}
+
+.card-servicio__texto-debajo {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--wp--preset--color--custom-texto-corrido);
+    opacity: 0.75;
+    margin: 0;
+    padding: 0 2px;
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ====================================================================
+   Variante horizontal
+   ==================================================================== */
+
+.card-servicio--horizontal {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+/* Línea punteada superior: raya de 2px y espacio de 2px, según Figma */
+.card-servicio--horizontal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(18, 18, 19, 0.1) 0px,
+        rgba(18, 18, 19, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+/* La línea inferior sólo cierra el listado, para no duplicar bordes entre filas */
+.card-servicio-article:last-child .card-servicio--horizontal::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(18, 18, 19, 0.1) 0px,
+        rgba(18, 18, 19, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+.card-servicio__titulo-horizontal {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--wp--preset--color--custom-titulos);
+    margin: 0;
+    padding: 0;
+    max-width: 761px;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-servicio__cta {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 34px;
+    border: 2px solid var(--wp--preset--color--custom-azul);
+    border-radius: 100px;
+    background: transparent;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: normal;
+    color: var(--wp--preset--color--custom-azul);
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-servicio--horizontal:hover .card-servicio__cta,
+.card-servicio--horizontal:focus-visible .card-servicio__cta {
+    background: var(--wp--preset--color--custom-azul);
+    color: #fff;
+}
+
+.card-servicio--horizontal:hover .card-servicio__titulo-horizontal,
+.card-servicio--horizontal:focus-visible .card-servicio__titulo-horizontal {
+    color: var(--wp--preset--color--custom-azul);
+}
+
+/* Botón de la variante vertical: pill transparente con borde blanco sobre el
+   azul de la tarjeta. Va después de .card-servicio__cta porque comparte
+   especificidad con él. margin-top: auto lo empuja al fondo de la tarjeta. */
+.card-servicio__cta--vertical {
+    z-index: 4;
+    align-self: flex-start;
+    width: 110px;
+    height: 34px;
+    margin: auto auto 40px 44px;
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.card-servicio--vertical:hover .card-servicio__cta--vertical,
+.card-servicio--vertical:focus-visible .card-servicio__cta--vertical {
+    background: #fff;
+    color: var(--wp--preset--color--custom-azul);
+}
+
+/* En la portada el pill arranca oculto y lo revela el hover de la tarjeta. Su
+   aspecto no cambia nunca: siempre sin fondo, con borde y texto blancos, así que
+   estas reglas neutralizan el relleno de la regla de arriba. */
+.home .card-servicio__cta--vertical {
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home .card-servicio--vertical:hover .card-servicio__cta--vertical,
+.home .card-servicio--vertical:focus-within .card-servicio__cta--vertical {
+    opacity: 1;
+    background: transparent;
+    color: #fff;
+}
+
+/* ====================================================================
+   Modo oscuro
+   ==================================================================== */
+
+body.is-dark .card-servicio__texto-debajo {
+    color: var(--wp--preset--color--custom-gris-claro);
+    opacity: 0.5;
+}
+
+body.is-dark .card-servicio__shader {
+    mix-blend-mode: screen;
+}
+
+body.is-dark .card-servicio__titulo-horizontal {
+    color: var(--wp--preset--color--custom-gris-claro);
+}
+
+body.is-dark .card-servicio--horizontal::before,
+body.is-dark .card-servicio-article:last-child .card-servicio--horizontal::after {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.15) 0px,
+        rgba(255, 255, 255, 0.15) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+/* ====================================================================
+   Accesibilidad
+   ==================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .card-servicio__titulo-horizontal,
+    .card-servicio__cta,
+    .home .card-servicio__cta--vertical {
+        transition: none;
+    }
+}
+
+/* ====================================================================
+   Desktop chico
+   ==================================================================== */
+
+@media (max-width: 1400px) {
+    .card-servicio__textos {
+        padding: 45px 30px;
+    }
+    .card-servicio__tarjeta {
+        min-height: 470px;
+    }
+}
+
+/* ====================================================================
+   Mobile / tablet
+   ==================================================================== */
+
+@media (max-width: 1023px) {
+    .card-servicio__tarjeta {
+        min-height: 350px;
+        padding-bottom: 30px;
+    }
+
+    .card-servicio__textos {
+        padding: 36px 28px;
+    }
+
+    .card-servicio__titulo {
+        font-size: 28px;
+    }
+
+    /* La separación acompaña al interlineado del título, más chico en mobile */
+    .card-servicio__descripcion {
+        font-size: 15px;
+    }
+
+    /* El margen inferior lo pone el padding-bottom de la tarjeta */
+    .card-servicio__cta--vertical {
+        margin: auto auto 0 28px;
+    }
+
+    .card-servicio--horizontal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 28px 0;
+    }
+
+    .card-servicio__titulo-horizontal {
+        font-size: 20px;
+        max-width: 100%;
+    }
+}

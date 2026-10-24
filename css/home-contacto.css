@@ -1,0 +1,732 @@
+/*    Home Contacto    */
+
+.home-contacto *,
+.home-contacto *::before,
+.home-contacto *::after,
+.home-contacto-editor *,
+.home-contacto-editor *::before,
+.home-contacto-editor *::after {
+    box-sizing: border-box;
+}
+
+.home-contacto {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0 !important;
+    padding-top: 150px;
+}
+
+.main-single .home-contacto {
+    max-width: none !important;
+}
+
+.home-contacto__inner {
+    position: relative;
+    width: 100%;
+    max-width: var(--wp--style--global--wide-size);
+    margin: 0 auto;
+}
+
+.home-contacto__grilla {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    gap: 50px;
+}
+
+.home-contacto__animaciones {
+    flex: 0 0 525px;
+    position: relative;
+    min-height: 659px;
+    isolation: isolate;
+}
+
+/* Acá va solo el layout del contenedor. El dibujo de los puntos, la máscara que
+   sigue al cursor y el halo de encendido los aporta el componente compartido
+   blocks/patron-puntos/, a través de la clase patron-puntos que suma el render.
+   Para pisar alguna de sus variables hacen falta dos clases
+   (.home-contacto .home-contacto__dots): el orden de carga entre ese CSS y este
+   no está garantizado. */
+.home-contacto__dots {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: auto;
+    transition: opacity 0.4s ease;
+}
+
+.home-contacto__aa,
+.home-contacto__tarjeta,
+.home-contacto__chat,
+.home-contacto__app,
+.home-contacto__cursor {
+    pointer-events: none;
+}
+
+.home-contacto__aa {
+    position: absolute;
+    top: 76px;
+    left: 70px;
+    z-index: 1;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 700;
+    font-size: 266px;
+    line-height: 0.82;
+    letter-spacing: -10px;
+    color: rgba(255, 255, 255, 0.92);
+    -webkit-text-stroke: 1px rgba(29, 29, 31, 0.08);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 0.8s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-contacto__aa.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.home-contacto__tarjeta {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+.home-contacto__tarjeta.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-contacto__tarjeta--1 {
+    top: 35px;
+    left: 16px;
+    width: 282.869px;
+    height: 163.5px;
+    background-color: #fff;
+}
+
+.home-contacto__tarjeta--1 .home-contacto__tarjeta-img {
+    object-fit: contain;
+}
+
+.home-contacto__tarjeta--2 {
+    top: 34px;
+    right: 28px;
+    width: 231.164px;
+    height: 188.311px;
+}
+
+.home-contacto__tarjeta--3 {
+    top: 342px;
+    left: 72px;
+    width: 239.616px;
+    height: 200.904px;
+}
+
+.home-contacto__tarjeta-layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-contacto__tarjeta-rotada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-contacto__tarjeta--2 .home-contacto__tarjeta-rotada {
+    transform: rotate(-8.21deg);
+}
+
+.home-contacto__tarjeta--3 .home-contacto__tarjeta-rotada {
+    transform: rotate(-12.25deg);
+}
+
+.home-contacto__tarjeta-marco {
+    background: #fff;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+}
+
+.home-contacto__tarjeta-media {
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.home-contacto__tarjeta--2 .home-contacto__tarjeta-marco {
+    width: 210.488px;
+    height: 159.89px;
+}
+
+.home-contacto__tarjeta--2 .home-contacto__tarjeta-media {
+    width: 198.207px;
+    height: 148.414px;
+}
+
+.home-contacto__tarjeta--3 .home-contacto__tarjeta-marco {
+    width: 210.488px;
+    height: 159.89px;
+}
+
+.home-contacto__tarjeta--3 .home-contacto__tarjeta-media {
+    width: 198.207px;
+    height: 148.414px;
+}
+
+.home-contacto__tarjeta-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-contacto__tarjeta-img--flat {
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+}
+
+.home-contacto__chat {
+    position: absolute;
+    top: 318px;
+    right: 16px;
+    width: 226.756px;
+    height: 177.513px;
+    z-index: 4;
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.75s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-contacto__chat.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-contacto__chat-rotada {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(4.85deg);
+}
+
+.home-contacto__chat-img {
+    display: block;
+    width: 214px;
+    height: 160px;
+}
+
+.home-contacto__app {
+    position: absolute;
+    z-index: 5;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.55s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.home-contacto__app.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.home-contacto__app-burbuja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-contacto__app-burbuja img {
+    display: block;
+    max-width: 30px;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+}
+
+.home-contacto__app--1 { left: 0; top: 333px; transform-origin: left center; }
+.home-contacto__app--2 { left: 66px; top: 404px; transform-origin: left bottom; }
+.home-contacto__app--3 { left: 42px; top: 237px; transform-origin: left center; }
+.home-contacto__app--4 { left: 392px; top: 228px; transform-origin: right center; }
+.home-contacto__app--5 { left: 455px; top: 318px; transform-origin: right center; }
+.home-contacto__app--6 { left: 457px; top: 79px; transform-origin: right top; }
+
+.home-contacto__cursor {
+    position: absolute;
+    z-index: 6;
+    left: 215px;
+    top: 234px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: left, top, opacity, transform;
+}
+
+.home-contacto__cursor.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-contacto__cursor svg {
+    flex-shrink: 0;
+    transform-origin: top left;
+    transition: transform 0.16s ease;
+}
+
+.home-contacto__cursor.is-clicking svg {
+    transform: scale(0.9);
+}
+
+.home-contacto__cursor-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 6px;
+    margin-left: 9px;
+    margin-top: 2px;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45;
+    letter-spacing: 0.13px;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 0 5px 5px 5px;
+    transition: transform 0.16s ease;
+}
+
+.home-contacto__cursor.is-clicking .home-contacto__cursor-label {
+    transform: translate(1px, 1px);
+}
+
+.home-contacto__contenido {
+    padding-top: 107px;
+    padding-left: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.home-contacto__titulo {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: -0.72px;
+    color: var(--wp--preset--color--custom-titulos);
+    margin: 0 0 40px;
+}
+
+.home-contacto__titulo-linea {
+    display: block;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.home-contacto__titulo-linea:last-child {
+    margin-bottom: 0;
+}
+
+.home-contacto__titulo-texto {
+    display: block;
+}
+
+.home-contacto__titulo-puntos {
+    --sq: 1px;
+    --gap: 1px;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: var(--sq);
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(18, 18, 19, 0.1) 0px,
+        rgba(18, 18, 19, 0.1) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+    position: absolute;
+    left: 0;
+    bottom: 9px;
+}
+
+.home-contacto__descripcion {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.35;
+    color: #98989C;
+    margin: 0 0 35px;
+    max-width: 515px;
+}
+
+.home-contacto__botonera {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.home-contacto__boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0px 85px;
+    background-color: var(--wp--preset--color--custom-azul);
+    color: #fff;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: normal;
+    text-decoration: none;
+    border-radius: 100px;
+    white-space: nowrap;
+    transition: all 0.4s ease-in-out;
+    margin-right: 5px;
+}
+
+.home-contacto__boton:hover {
+    background-color: var(--wp--preset--color--custom-azul-hover);
+    color: #fff;
+}
+
+.home-contacto__social {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    padding: 5px;
+}
+
+.home-contacto__social:nth-child(2) img {
+    transform: translateY(1px);
+}
+
+.home-contacto__social:hover {
+    transform: translateY(-3px);
+}
+
+.home-contacto__social img {
+    display: block;
+    height: 20px;
+    width: auto;
+}
+
+.home-contacto-editor {
+    background: var(--wp--preset--color--custom-gris-claro, #f5f5f7);
+    padding: 60px 30px;
+    position: relative;
+}
+
+.home-contacto-editor__preview {
+    max-width: 600px;
+}
+
+.home-contacto-editor__titulo {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.72px;
+    color: var(--wp--preset--color--custom-titulos);
+    margin: 0 0 24px;
+}
+
+.home-contacto-editor__descripcion {
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--wp--preset--color--custom-texto-corrido);
+    margin: 0 0 24px;
+    max-width: 515px;
+}
+
+.home-contacto-editor__botonera {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.home-contacto-editor__boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 40px;
+    background-color: var(--wp--preset--color--custom-azul, #0859d4);
+    color: #fff;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.home-contacto-editor__socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-contacto-editor__social-icon {
+    height: 13px;
+    width: auto;
+    display: block;
+}
+
+.home-contacto-editor__social-placeholder {
+    display: inline-block;
+    width: 20px;
+    height: 13px;
+    background: #ddd;
+    border-radius: 2px;
+}
+
+.home-contacto-editor__info {
+    margin-top: 30px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.archive-servicio .home-contacto {
+    padding-top: 125px;
+}
+
+@media (max-width: 1023px) {
+
+    .home-contacto {
+        padding-top: 50px;
+    }
+
+    .home-contacto__grilla {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .home-contacto__animaciones {
+        flex: none;
+        width: 100%;
+        min-height: 420px;
+    }
+
+    .home-contacto__aa {
+        top: 46px;
+        left: 34px;
+        font-size: 170px;
+        letter-spacing: -6px;
+    }
+
+    .home-contacto__tarjeta--1 {
+        top: 18px;
+        left: 8px;
+        width: 200px;
+        height: 116px;
+    }
+
+    .home-contacto__tarjeta--2 {
+        top: 30px;
+        right: 20px;
+        width: 160px;
+        height: 130px;
+    }
+
+    .home-contacto__tarjeta--3 {
+        top: 214px;
+        left: 36px;
+        width: 170px;
+        height: 142px;
+    }
+
+    .home-contacto__tarjeta--2 .home-contacto__tarjeta-marco,
+    .home-contacto__tarjeta--3 .home-contacto__tarjeta-marco {
+        width: 145px;
+        height: 110px;
+    }
+
+    .home-contacto__tarjeta--2 .home-contacto__tarjeta-media,
+    .home-contacto__tarjeta--3 .home-contacto__tarjeta-media {
+        width: 136px;
+        height: 102px;
+    }
+
+    .home-contacto__chat {
+        top: 205px;
+        right: 8px;
+        width: 165px;
+        height: 128px;
+    }
+
+    .home-contacto__chat-img {
+        width: 155px;
+        height: auto;
+    }
+
+    .home-contacto__app--1 { left: 0; top: 220px; }
+    .home-contacto__app--2 { left: 38px; top: 280px; }
+    .home-contacto__app--3 { left: 18px; top: 155px; }
+    .home-contacto__app--4 { left: 278px; top: 145px; }
+    .home-contacto__app--5 { left: 310px; top: 220px; }
+    .home-contacto__app--6 { left: 300px; top: 55px; }
+
+    .home-contacto__app-burbuja {
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-contacto__app {
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-contacto__app-burbuja img {
+        max-width: 20px;
+        max-height: 20px;
+    }
+
+    .home-contacto__cursor {
+        left: 138px;
+        top: 170px;
+    }
+
+    .home-contacto__contenido {
+        padding: 0;
+        padding-bottom: 60px;
+    }
+
+    .home-contacto__titulo {
+        font-size: 40px;
+        letter-spacing: -0.4px;
+        margin-bottom: 24px;
+    }
+
+    .home-contacto__titulo-linea {
+        margin-bottom: 6px;
+    }
+
+    .home-contacto__titulo-puntos {
+        width: 100%;
+        bottom: 6px;
+    }
+
+    .home-contacto__descripcion {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .home-contacto__botonera {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-contacto__boton {
+        height: 50px;
+        padding: 0px 36px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .main-single .home-contacto {
+        padding-top: 60px;
+    }
+
+    .archive-servicio .home-contacto {
+        padding-top: 65px;
+    }
+}
+
+.home-contacto__titulo {
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-contacto__descripcion {
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-contacto__tarjeta--1 {
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.75s ease,
+                transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-contacto__tarjeta-marco {
+    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-contacto__tarjeta-img--flat {
+    transition: border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Las burbujas/apps con backdrop-filter cambian de fondo al instante (sin transición):
+   animar su fondo obliga a recalcular el desenfoque en cada frame y tilda el toggle. */
+
+body.is-dark .home-contacto__titulo {
+    color: #fff;
+}
+
+body.is-dark .home-contacto__titulo-puntos {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2) 0px,
+        rgba(255, 255, 255, 0.2) var(--sq),
+        transparent var(--sq),
+        transparent calc(var(--sq) + var(--gap))
+    );
+}
+
+body.is-dark .home-contacto__descripcion {
+    color: var(--wp--preset--color--custom-gris-claro);
+}
+
+body.is-dark .home-contacto__tarjeta--1 {
+    background-color: #171717;
+}
+
+body.is-dark .home-contacto__tarjeta-marco {
+    background: #171717;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.is-dark .home-contacto__tarjeta-img--flat {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.is-dark .home-contacto__app-burbuja {
+    background: rgba(17, 17, 17, 0.86);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Durante el cambio de tema, las burbujas con backdrop-filter desactivan el
+   desenfoque para que el navegador no lo recalcule en cada frame mientras los
+   fondos se funden detrás. */
+body.theme-switching .home-contacto__app-burbuja {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
