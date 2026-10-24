@@ -33,6 +33,7 @@ body.is-dark .home-bloque-dark-mode {
 }
 
 .home-bloque-dark-mode__card {
+    background-color: #FF5400;
     --home-bloque-dark-mode-card-gap: 75px;
     --home-bloque-dark-mode-card-padding-block-start: 100px;
     --home-bloque-dark-mode-card-padding-inline-end: 0px;
@@ -53,7 +54,7 @@ body.is-dark .home-bloque-dark-mode {
 }
 
 body.is-dark .home-bloque-dark-mode__card {
-    background-color: #111;
+    background-color: #FF5400 !important;
 }
 
 .home-bloque-dark-mode__drag-area {
