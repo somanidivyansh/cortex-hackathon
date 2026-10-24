@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadence · After the Event</title>
+  <meta name="description" content="Cadence turns what you felt at an event into what you do next. Drag cards into action zones to capture, review, prioritise and follow through.">
+  <link rel="icon" href="../assets/cropped-favicon-32x32-1-32x32.png">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="is-loading">
+  <!-- Loader: squiggle draws, wordmark pops, panel lifts -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader-squiggle" viewBox="0 0 728 1020" fill="none">
+      <path d="M25.002 153.857C25.002 153.857 151.002 -28.0122 236.002 40.3572C351.002 132.857 -86.2292 534.598 62.5019 617.857C173.257 679.857 466.502 -70.1428 646.002 40.3572C889.446 190.221 -74.3269 862.107 151.002 983.857C337.002 1084.36 526.502 453.148 665.002 551.357C803.502 649.566 415.502 926.187 501.002 983.857C586.502 1041.53 703.002 794.357 703.002 794.357" stroke="currentColor" stroke-width="34" stroke-linecap="round"/>
+    </svg>
+    <div class="loader-mark"><span>Cadence</span><span>.</span></div>
+  </div>
+
+  <!-- Page transition panel -->
+  <div class="wipe" id="wipe" aria-hidden="true"></div>
+
+  <a class="back-pill" href="../two26-studio/index.html"><span aria-hidden="true">&lsaquo;</span> Back to features</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open sections menu">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 7h9a4 4 0 0 1 0 8H6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </button>
+
+  <nav class="menu" id="menu" aria-label="Sections" hidden>
+    <ol class="menu-list" id="menuList"></ol>
+    <div class="menu-foot">Cadence · After the Event · Team Cortex</div>
+  </nav>
+
+  <header class="hero" id="hero"></header>
+
+  <nav class="chips" id="tabs" aria-label="Sections"></nav>
+
+  <main class="layout">
+    <section class="canvas" id="canvas" aria-live="polite"></section>
+    <aside class="zones" id="zones" aria-label="Action zones"></aside>
+  </main>
+
+  <a class="next" id="next" href="#"></a>
+
+  <footer class="foot">
+    <span>Cadence by Team Cortex · Your data stays in this browser.</span>
+    <span><a href="#" id="resetDemo">Reset demo data</a></span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"><span id="toastMsg"></span><a id="toastUndo">Undo</a></div>
+  <p class="sr-only" id="kbdHelp">Drag this card onto an action zone. With the keyboard, focus the card and press a zone's number key.</p>
+
+  <script src="../two26-studio/js/gsap.min.js"></script>
+  <script src="../two26-studio/js/SplitText.min.js"></script>
+  <script src="../two26-studio/js/ScrollTrigger.min.js"></script>
+  <script src="../two26-studio/js/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
