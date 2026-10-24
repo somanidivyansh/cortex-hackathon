@@ -1,0 +1,19 @@
+{
+  "name": "two26-studio-replica",
+  "version": "1.0.0",
+  "description": "Complete local replica of Two26 Studio (https://two26.studio) with custom GSAP animations, SplitText, DrawSVG, MotionPath, Lenis smooth scrolling, and full assets.",
+  "scripts": {
+    "start": "python -m http.server 3001",
+    "dev": "python -m http.server 3001",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "two26-studio",
+    "webflow",
+    "gsap",
+    "lenis",
+    "replica"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
