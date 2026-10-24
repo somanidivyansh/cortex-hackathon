@@ -49,7 +49,112 @@
 <meta content="https://onlines.com.ar/wp-content/uploads/2026/03/cropped-favicon-32x32-1-270x270.png" name="msapplication-TileImage"/>
 <!-- Google Tag Manager -->
 <!-- End Google Tag Manager -->
-<link href="./css/lenis.css" rel="stylesheet"/><link href="./css/swiper.min.css" rel="stylesheet"/><link href="./css/theme-inline.css" rel="stylesheet"/><link href="./css/styles.css" rel="stylesheet"/><link href="./css/home-hero.css" rel="stylesheet"/><link href="./css/card-servicio.css" rel="stylesheet"/><link href="./css/home-bloque-dark-mode.css" rel="stylesheet"/><link href="./css/home-equipo.css" rel="stylesheet"/><link href="./css/home-portfolio.css" rel="stylesheet"/><link href="./css/card-noticia.css" rel="stylesheet"/><link href="./css/home-contacto.css" rel="stylesheet"/></head>
+<link href="./css/lenis.css" rel="stylesheet"/><link href="./css/swiper.min.css" rel="stylesheet"/><link href="./css/theme-inline.css" rel="stylesheet"/><link href="./css/styles.css" rel="stylesheet"/><link href="./css/home-hero.css" rel="stylesheet"/><link href="./css/card-servicio.css" rel="stylesheet"/><link href="./css/home-bloque-dark-mode.css" rel="stylesheet"/><link href="./css/home-equipo.css" rel="stylesheet"/><link href="./css/home-portfolio.css" rel="stylesheet"/><link href="./css/card-noticia.css?v=1792852200" rel="stylesheet"/><link href="./css/home-contacto.css" rel="stylesheet"/><style id="card-noticia-override">
+.card-noticia {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 480px !important;
+    min-height: 480px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    background-color: #121214 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+.card-noticia:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25) !important;
+}
+.card-noticia__imagen {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 480px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
+.card-noticia__imagen picture,
+.card-noticia__imagen img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+}
+.card-noticia__imagen::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.2) 30%, rgba(8,8,12,0.78) 60%, rgba(6,6,10,0.96) 100%) !important;
+    pointer-events: none !important;
+}
+.card-noticia__contenido {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10 !important;
+    padding: 32px 26px 28px !important;
+    box-sizing: border-box !important;
+    pointer-events: none !important;
+    background: linear-gradient(180deg, transparent 0%, rgba(8,8,12,0.85) 45%, rgba(6,6,10,0.98) 100%) !important;
+}
+.card-noticia__titulo {
+    color: #ffffff !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    line-height: 1.28 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6) !important;
+}
+.card-noticia__titulo-texto {
+    color: #ffffff !important;
+    border-bottom: none !important;
+}
+.card-noticia__titulo-puntos {
+    display: none !important;
+}
+.card-noticia__extracto,
+.card-noticia__extracto p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 14.5px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+}
+
+
+.card-noticia:hover 
+@media (max-width: 1023px) {
+    .card-noticia {
+        height: 420px !important;
+        min-height: 420px !important;
+    }
+    .card-noticia__imagen {
+        min-height: 420px !important;
+    }
+    .card-noticia__titulo {
+        font-size: 19px !important;
+    }
+    .card-noticia__extracto,
+    .card-noticia__extracto p {
+        font-size: 13.5px !important;
+    }
+    .card-noticia__contenido {
+        padding: 24px 20px !important;
+    }
+}
+</style>
+
+</head>
 <body class="home wp-singular page-template-default page page-id-35 wp-embed-responsive wp-theme-onlines-web-2026">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KGG3XRX7" style="display:none;visibility:hidden" width="0"></iframe></noscript>
@@ -578,11 +683,8 @@
 </section>
 <div class="ultimas-noticias px-1rem-mob mt-0 wp-block-onlines-ultimas-noticias" id="insights">
 <article class="card-noticia-article card-noticia--sin-fecha">
-<a aria-label="The 48-Hour Cliff: Why Post-Event Momentum Disappears" class="card-noticia wp-block-onlines-card-noticia" href="https://onlines.com.ar/inteligencia-artificial-ciberseguridad-sitios-web/" style="" title="La IA está cambiando la ciberseguridad: ¿está preparado tu sitio web?">
-<div class="card-noticia__badge" aria-hidden="true">&#x26A1; Insight 01 &middot; Post-Event Dropoff</div>
-<div class="card-noticia__arrow" aria-hidden="true">&nearr;</div>
-
-<div class="card-noticia__imagen">
+<a aria-label="The 48-Hour Cliff: Why Post-Event Momentum Disappears" class="card-noticia wp-block-onlines-card-noticia" href="https://onlines.com.ar/inteligencia-artificial-ciberseguridad-sitios-web/" style="" title="La IA está cambiando la ciberseguridad: ¿está preparado tu sitio web?"style="position:relative; display:block; width:100%; height:480px; min-height:480px; border-radius:20px; overflow:hidden; text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,0.12);">
+<div class="card-noticia__imagen" style="position:absolute; inset:0; width:100%; height:100%; min-height:480px; border-radius:20px; overflow:hidden; z-index:1;">
 <picture>
 <source media="(min-width: 1024px)" srcset="./assets/ambar-ultramar-1024x576.webp"/>
 <img alt="La IA está cambiando la ciberseguridad: ¿está preparado tu sitio web?" decoding="async" height="340" loading="lazy" src="./assets/ambar-ultramar-300x169.webp" style="background-color:#222" width="407"/>
@@ -596,22 +698,19 @@
 </div>
 </div>
 </div>
-<div class="card-noticia__contenido">
-<h4 class="card-noticia__titulo js-card-noticia-titulo" data-card-noticia-title="The 48-Hour Cliff: Why Post-Event Value Disappears">
-<span class="card-noticia__titulo-texto">The 48-Hour Cliff: Why Post-Event Value Disappears</span>
+<div class="card-noticia__contenido" style="position:absolute; bottom:0; left:0; right:0; z-index:10; padding:32px 26px 28px; box-sizing:border-box; pointer-events:none; background:linear-gradient(180deg, transparent 0%, rgba(8,8,12,0.85) 45%, rgba(6,6,10,0.98) 100%); border-radius:0 0 20px 20px;">
+<h4 class="card-noticia__titulo js-card-noticia-titulo" data-card-noticia-title="The 48-Hour Cliff: Why Post-Event Value Disappears"><span style="display:none"></span>
+<span class="card-noticia__titulo-texto" style="color:#ffffff !important; font-size:22px !important; font-weight:700 !important; line-height:1.28 !important; letter-spacing:-0.02em !important; border-bottom:none !important; text-shadow:0 2px 10px rgba(0,0,0,0.6) !important;">The 48-Hour Cliff: Why Post-Event Value Disappears</span>
 </h4>
-<div class="card-noticia__extracto">
+<div class="card-noticia__extracto" style="color:rgba(255,255,255,0.9) !important; font-size:14.5px !important; line-height:1.5 !important; margin:0 !important; text-shadow:0 1px 4px rgba(0,0,0,0.5) !important;">
 <p>Four reasons post-event value quietly evaporates: scattered notes across apps, lost ideas that never become drafts, unclear evening priorities, and missed follow-up windows while life resumes.</p>
 </div>
 </div>
 </a>
 </article>
 <article class="card-noticia-article card-noticia--sin-fecha">
-<a aria-label="Publicar en tu sitio web y distribuir en otros lugares" class="card-noticia wp-block-onlines-card-noticia" href="https://onlines.com.ar/publicar-en-tu-sitio-web-y-distribuir-en-otros-lugares/" style="" title="Publicar en tu sitio web y distribuir en otros lugares">
-<div class="card-noticia__badge" aria-hidden="true">&#x1F3AF; Insight 02 &middot; Follow-Through Friction</div>
-<div class="card-noticia__arrow" aria-hidden="true">&nearr;</div>
-
-<div class="card-noticia__imagen">
+<a aria-label="Publicar en tu sitio web y distribuir en otros lugares" class="card-noticia wp-block-onlines-card-noticia" href="https://onlines.com.ar/publicar-en-tu-sitio-web-y-distribuir-en-otros-lugares/" style="" title="Publicar en tu sitio web y distribuir en otros lugares"style="position:relative; display:block; width:100%; height:480px; min-height:480px; border-radius:20px; overflow:hidden; text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,0.12);">
+<div class="card-noticia__imagen" style="position:absolute; inset:0; width:100%; height:100%; min-height:480px; border-radius:20px; overflow:hidden; z-index:1;">
 <picture>
 <source media="(min-width: 1024px)" srcset="./assets/posse-web-onlines-1024x576.webp"/>
 <img alt="Publicar en tu sitio web y distribuir en otros lugares" decoding="async" height="340" loading="lazy" src="./assets/posse-web-onlines-300x169.webp" style="background-color:#222" width="407"/>
@@ -625,22 +724,19 @@
 </div>
 </div>
 </div>
-<div class="card-noticia__contenido">
-<h4 class="card-noticia__titulo js-card-noticia-titulo" data-card-noticia-title="Inspiration Is Easy. Follow-Through Is Hard">
-<span class="card-noticia__titulo-texto">Inspiration Is Easy. Follow-Through Is Hard</span>
+<div class="card-noticia__contenido" style="position:absolute; bottom:0; left:0; right:0; z-index:10; padding:32px 26px 28px; box-sizing:border-box; pointer-events:none; background:linear-gradient(180deg, transparent 0%, rgba(8,8,12,0.85) 45%, rgba(6,6,10,0.98) 100%); border-radius:0 0 20px 20px;">
+<h4 class="card-noticia__titulo js-card-noticia-titulo" data-card-noticia-title="Inspiration Is Easy. Follow-Through Is Hard"><span style="display:none"></span>
+<span class="card-noticia__titulo-texto" style="color:#ffffff !important; font-size:22px !important; font-weight:700 !important; line-height:1.28 !important; letter-spacing:-0.02em !important; border-bottom:none !important; text-shadow:0 2px 10px rgba(0,0,0,0.6) !important;">Inspiration Is Easy. Follow-Through Is Hard</span>
 </h4>
-<div class="card-noticia__extracto">
+<div class="card-noticia__extracto" style="color:rgba(255,255,255,0.9) !important; font-size:14.5px !important; line-height:1.5 !important; margin:0 !important; text-shadow:0 1px 4px rgba(0,0,0,0.5) !important;">
 <p>Where today's tools fall short: event platforms optimize only for RSVPs and replays, note apps hoard static text without action paths, and generic task managers sever the link back to the event.</p>
 </div>
 </div>
 </a>
 </article>
 <article class="card-noticia-article card-noticia--sin-fecha">
-<a aria-label="AI That Helps You Act, Not Just Organise" class="card-noticia wp-block-onlines-card-noticia" href="https://onlines.com.ar/diseno-web-centrado-en-el-usuario-y-sus-principios-clave/" style="" title="Diseño web centrado en el usuario y sus principios clave">
-<div class="card-noticia__badge" aria-hidden="true">&#x1F6E1;&#xFE0F; Insight 03 &middot; Human Agency &amp; Approval</div>
-<div class="card-noticia__arrow" aria-hidden="true">&nearr;</div>
-
-<div class="card-noticia__imagen">
+<a aria-label="AI That Helps You Act, Not Just Organise" class="card-noticia wp-block-onlines-card-noticia" href="https://onlines.com.ar/diseno-web-centrado-en-el-usuario-y-sus-principios-clave/" style="" title="Diseño web centrado en el usuario y sus principios clave"style="position:relative; display:block; width:100%; height:480px; min-height:480px; border-radius:20px; overflow:hidden; text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,0.12);">
+<div class="card-noticia__imagen" style="position:absolute; inset:0; width:100%; height:100%; min-height:480px; border-radius:20px; overflow:hidden; z-index:1;">
 <picture>
 <source media="(min-width: 1024px)" srcset="./assets/diseno-centrado-usuario-1024x576.webp"/>
 <img alt="AI That Helps You Act, Not Just Organise" decoding="async" height="340" loading="lazy" src="./assets/diseno-centrado-usuario-300x169.webp" style="background-color:#222" width="407"/>
@@ -654,11 +750,11 @@
 </div>
 </div>
 </div>
-<div class="card-noticia__contenido">
-<h4 class="card-noticia__titulo js-card-noticia-titulo" data-card-noticia-title="AI That Helps You Act: If AI Proposes It, You Decide It">
-<span class="card-noticia__titulo-texto">AI That Helps You Act: If AI Proposes It, You Decide It</span>
+<div class="card-noticia__contenido" style="position:absolute; bottom:0; left:0; right:0; z-index:10; padding:32px 26px 28px; box-sizing:border-box; pointer-events:none; background:linear-gradient(180deg, transparent 0%, rgba(8,8,12,0.85) 45%, rgba(6,6,10,0.98) 100%); border-radius:0 0 20px 20px;">
+<h4 class="card-noticia__titulo js-card-noticia-titulo" data-card-noticia-title="AI That Helps You Act: If AI Proposes It, You Decide It"><span style="display:none"></span>
+<span class="card-noticia__titulo-texto" style="color:#ffffff !important; font-size:22px !important; font-weight:700 !important; line-height:1.28 !important; letter-spacing:-0.02em !important; border-bottom:none !important; text-shadow:0 2px 10px rgba(0,0,0,0.6) !important;">AI That Helps You Act: If AI Proposes It, You Decide It</span>
 </h4>
-<div class="card-noticia__extracto">
+<div class="card-noticia__extracto" style="color:rgba(255,255,255,0.9) !important; font-size:14.5px !important; line-height:1.5 !important; margin:0 !important; text-shadow:0 1px 4px rgba(0,0,0,0.5) !important;">
 <p>Why human confirmation checkpoints are essential for personal productivity: keeping actions 100% source-traceable and ensuring personal agency in every saved commitment.</p>
 </div>
 </div>

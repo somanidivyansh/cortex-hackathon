@@ -379,57 +379,11 @@ body.is-dark .card-noticia:focus .card-noticia__titulo-puntos {
     ) !important;
 }
 
-.card-noticia__badge {
-    position: absolute !important;
-    top: 22px !important;
-    left: 22px !important;
-    z-index: 10 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    padding: 6px 14px !important;
-    background: rgba(14, 14, 18, 0.65) !important;
-    border: 1px solid rgba(255, 255, 255, 0.22) !important;
-    border-radius: 999px !important;
-    font-family: var(--wp--preset--font-family--jetbrains-mono, monospace) !important;
-    font-size: 11px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-    text-transform: uppercase !important;
-    color: #ffffff !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
-    pointer-events: none !important;
-}
 
-.card-noticia__arrow {
-    position: absolute !important;
-    top: 22px !important;
-    right: 22px !important;
-    z-index: 10 !important;
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 50% !important;
-    background: rgba(14, 14, 18, 0.55) !important;
-    border: 1px solid rgba(255, 255, 255, 0.22) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #ffffff !important;
-    font-size: 17px !important;
-    font-weight: 700 !important;
-    transition: all 0.3s ease !important;
-    pointer-events: none !important;
-}
 
-.card-noticia:hover .card-noticia__arrow {
-    background: var(--wp--preset--color--custom-azul, #0859d4) !important;
-    border-color: var(--wp--preset--color--custom-azul, #0859d4) !important;
-    transform: translate(2px, -2px) !important;
-}
+
+
+.card-noticia:hover 
 
 .card-noticia__contenido {
     position: relative !important;
