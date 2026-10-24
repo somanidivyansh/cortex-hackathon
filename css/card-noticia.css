@@ -450,3 +450,73 @@ body.is-dark .card-noticia:focus .card-noticia__titulo-puntos {
         padding: 24px 20px !important;
     }
 }
+
+
+/* Shimmer sweep animation across panels on hover */
+.card-noticia::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -120% !important;
+    width: 70% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.18) 50%, transparent 100%) !important;
+    transform: skewX(-25deg) !important;
+    z-index: 6 !important;
+    pointer-events: none !important;
+    transition: left 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+.card-noticia:hover::before {
+    left: 150% !important;
+}
+
+/* 3D scale and lift */
+.card-noticia {
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.card-noticia:hover {
+    transform: translateY(-8px) scale(1.015) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Image zoom on hover */
+.card-noticia__imagen img {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+.card-noticia:hover .card-noticia__imagen img {
+    transform: scale(1.08) !important;
+}
+
+/* Text micro-lift on hover */
+.card-noticia__contenido {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+.card-noticia:hover .card-noticia__contenido {
+    transform: translateY(-4px) !important;
+}
+.card-noticia__titulo {
+    transition: text-shadow 0.3s ease !important;
+}
+.card-noticia:hover .card-noticia__titulo {
+    text-shadow: 0 2px 14px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Idle gentle floating breathe animation */
+@keyframes card-idle-breathe {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+.card-noticia-article:nth-child(1) .card-noticia {
+    animation: card-idle-breathe 6s ease-in-out infinite;
+}
+.card-noticia-article:nth-child(2) .card-noticia {
+    animation: card-idle-breathe 6s ease-in-out infinite 2s;
+}
+.card-noticia-article:nth-child(3) .card-noticia {
+    animation: card-idle-breathe 6s ease-in-out infinite 4s;
+}
+.card-noticia:hover {
+    animation-play-state: paused !important;
+}
