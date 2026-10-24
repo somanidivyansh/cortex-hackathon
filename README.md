@@ -46,9 +46,6 @@
 7. **User Personas & Momentum Showcase**:
    - Fanned card deck for **The Student Attendee**, **The Builder / Early Pro**, and **The Networker / Founder**.
 
-8. **Bilingual Support (EN / ES)**:
-   - Instant language toggle pill in the fixed header next to the `Try Cadence` CTA.
-
 ---
 
 ## 🚀 Getting Started
