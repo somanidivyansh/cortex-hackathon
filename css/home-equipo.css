@@ -551,3 +551,5 @@ body.theme-switching .home-equipo .comentario-figma__burbuja {
     white-space: nowrap;
     font-family: var(--wp--preset--font-family--inter-display, 'Inter Display', sans-serif);
 }
+
+.home-equipo__seleccion { display: none !important; }
