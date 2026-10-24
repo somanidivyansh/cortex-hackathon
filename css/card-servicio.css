@@ -240,18 +240,21 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 110px;
-    height: 34px;
-    border: 2px solid var(--wp--preset--color--custom-azul);
+    gap: 8px;
+    width: auto;
+    min-width: 140px;
+    height: 40px;
+    padding: 0 22px;
+    border: 1.5px solid var(--wp--preset--color--custom-azul);
     border-radius: 100px;
     background: transparent;
     font-family: var(--wp--preset--font-family--inter-display);
     font-weight: 600;
-    font-size: 14px;
-    line-height: normal;
+    font-size: 14.5px;
+    line-height: 1;
     color: var(--wp--preset--color--custom-azul);
-    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .card-servicio--horizontal:hover .card-servicio__cta,
@@ -265,39 +268,57 @@
     color: var(--wp--preset--color--custom-azul);
 }
 
-/* Botón de la variante vertical: pill transparente con borde blanco sobre el
-   azul de la tarjeta. Va después de .card-servicio__cta porque comparte
-   especificidad con él. margin-top: auto lo empuja al fondo de la tarjeta. */
+/* Botón de la variante vertical: pill moderno con padding generoso, elevación y flecha interactiva */
 .card-servicio__cta--vertical {
     z-index: 4;
     align-self: flex-start;
-    width: 110px;
-    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: auto;
+    min-width: 154px;
+    height: 42px;
     margin: auto auto 40px 44px;
-    border-color: #fff;
-    background: transparent;
-    color: #fff;
+    padding: 0 24px;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-family: var(--wp--preset--font-family--inter-display);
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+    opacity: 1 !important;
+}
+
+.card-servicio__cta-icon {
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.25s ease;
 }
 
 .card-servicio--vertical:hover .card-servicio__cta--vertical,
-.card-servicio--vertical:focus-visible .card-servicio__cta--vertical {
-    background: #fff;
-    color: var(--wp--preset--color--custom-azul);
-}
-
-/* En la portada el pill arranca oculto y lo revela el hover de la tarjeta. Su
-   aspecto no cambia nunca: siempre sin fondo, con borde y texto blancos, así que
-   estas reglas neutralizan el relleno de la regla de arriba. */
-.home .card-servicio__cta--vertical {
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+.card-servicio--vertical:focus-visible .card-servicio__cta--vertical,
 .home .card-servicio--vertical:hover .card-servicio__cta--vertical,
 .home .card-servicio--vertical:focus-within .card-servicio__cta--vertical {
-    opacity: 1;
-    background: transparent;
-    color: #fff;
+    background: #ffffff !important;
+    color: var(--wp--preset--color--custom-azul, #0055ff) !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.card-servicio--vertical:hover .card-servicio__cta-icon,
+.card-servicio--vertical:focus-visible .card-servicio__cta-icon,
+.home .card-servicio--vertical:hover .card-servicio__cta-icon,
+.home .card-servicio--vertical:focus-within .card-servicio__cta-icon {
+    transform: translateX(3px);
 }
 
 /* ====================================================================
