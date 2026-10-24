@@ -281,3 +281,218 @@ body.is-dark .card-noticia:focus .card-noticia__titulo-puntos {
         transparent calc(var(--sq) + var(--gap))
     );
 }
+
+
+/* ==========================================================================
+   Card Noticia — Flash Card Overlay Redesign
+   Text rendered directly ON the card with gradient scrim for high readability
+   ========================================================================== */
+
+.card-noticia {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    min-height: 480px !important;
+    height: 480px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease !important;
+    background-color: #121214 !important;
+}
+
+.card-noticia:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22) !important;
+}
+
+.card-noticia__imagen {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
+
+.card-noticia__imagen picture {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.card-noticia__imagen img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.card-noticia:hover .card-noticia__imagen img {
+    transform: scale(1.06) !important;
+}
+
+.card-noticia__shader {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+}
+
+/* Gradient overlay scrim over the image for perfect contrast */
+.card-noticia__imagen::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.25) 30%,
+        rgba(10, 10, 14, 0.75) 60%,
+        rgba(8, 8, 12, 0.96) 100%
+    ) !important;
+    pointer-events: none !important;
+    transition: background 0.4s ease !important;
+}
+
+.card-noticia:hover .card-noticia__imagen::after {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.35) 25%,
+        rgba(10, 10, 14, 0.82) 55%,
+        rgba(8, 8, 12, 0.98) 100%
+    ) !important;
+}
+
+.card-noticia__badge {
+    position: absolute !important;
+    top: 22px !important;
+    left: 22px !important;
+    z-index: 10 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 6px 14px !important;
+    background: rgba(14, 14, 18, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: 999px !important;
+    font-family: var(--wp--preset--font-family--jetbrains-mono, monospace) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    pointer-events: none !important;
+}
+
+.card-noticia__arrow {
+    position: absolute !important;
+    top: 22px !important;
+    right: 22px !important;
+    z-index: 10 !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(14, 14, 18, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: none !important;
+}
+
+.card-noticia:hover .card-noticia__arrow {
+    background: var(--wp--preset--color--custom-azul, #0859d4) !important;
+    border-color: var(--wp--preset--color--custom-azul, #0859d4) !important;
+    transform: translate(2px, -2px) !important;
+}
+
+.card-noticia__contenido {
+    position: relative !important;
+    z-index: 10 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    align-items: flex-start !important;
+    padding: 32px 26px 28px !important;
+    box-sizing: border-box !important;
+    pointer-events: none !important;
+}
+
+.card-noticia__titulo {
+    font-family: var(--wp--preset--font-family--inter-display, sans-serif) !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    line-height: 1.28 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-noticia__titulo-texto {
+    display: inline !important;
+    color: #ffffff !important;
+    border-bottom: none !important;
+}
+
+.card-noticia__titulo-puntos {
+    display: none !important;
+}
+
+.card-noticia__extracto {
+    font-family: var(--wp--preset--font-family--inter-display, sans-serif) !important;
+    font-weight: 400 !important;
+    font-size: 14.5px !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    margin: 0 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.card-noticia__extracto p {
+    color: rgba(255, 255, 255, 0.88) !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 1023px) {
+    .card-noticia {
+        min-height: 400px !important;
+        height: 400px !important;
+    }
+    .card-noticia__titulo {
+        font-size: 19px !important;
+    }
+    .card-noticia__extracto {
+        font-size: 13.5px !important;
+    }
+    .card-noticia__contenido {
+        padding: 24px 20px !important;
+    }
+}
