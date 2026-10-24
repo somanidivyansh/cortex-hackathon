@@ -308,11 +308,11 @@
   var IMG = "../showcase/assets/";
   var META = {
     capture: { img: "6ab392697fe7cc9c077d1bb5_HeyGluco_2_hover.jpg", bg: "#f6c9c7", accent: "#ff5400", title: "Capture", pills: ["P1 · Student attendee", "Notes + reflection", "After the event"], tags: ["Event reflection", "Notes & takeaways", "Quick capture"] },
-    review: { img: "6ab270be80849a0a23faa284_6ab270907f6e9d96146209a1_MVP_Thumbnail1.jpeg", bg: "#9a9a9a", accent: "#153fe3", title: "AI Review", pills: ["AI · Action engine", "Human approval", "Zero invention"], tags: ["Smart extraction", "Source-linked", "You decide"] },
-    today: { img: "6ab2723d53bb370f04afa381_6ab2721e4694c5c1d617273d_Munchies_1.jpeg", bg: "#7b3fe4", accent: "#ff5400", title: "Do this first", pills: ["APP · Live prototype", "One next step", "48-hour window"], tags: ["Priority score", "Clear reason", "Momentum"] },
-    ideas: { img: "6ab270be80849a0a23faa24d_6ab27078c47da30c0af6b000_Bagel_1.jpeg", bg: "#1a54e4", accent: "#ffffff", title: "Ideas", pills: ["P2 · Builder / early pro", "Idea → experiment", "3-day first step"], tags: ["Idea inbox", "Experiments", "Park or archive"] },
-    people: { img: "6ab2723d53bb370f04afa38a_6ab2722877656a8e8b50e7c0_Tanti_1.jpeg", bg: "#f25525", accent: "#ff5400", title: "People", pills: ["P3 · Networker / founder", "Context + follow-up", "Drafts from your notes"], tags: ["Contact cards", "Follow-up status", "Reminders"] },
-    progress: { img: "6ab2723d53bb370f04afa37d_6ab272335c44422412d81fb1_YumYum_1.jpeg", bg: "#121213", accent: "#ff5400", title: "Progress", pills: ["ROI · 30-day targets", "Live numbers", "Outcomes per event"], tags: ["Acceptance rate", "Event-to-outcome", "72-hour follow-ups"] }
+    review: { img: "feature-ai-engine.jpg", fit: "contain", bg: "#fefefe", accent: "#ff5400", ink: "#ff5400", title: "AI Review", pills: ["AI · Action engine", "Human approval", "Zero invention"], tags: ["Smart extraction", "Source-linked", "You decide"] },
+    today: { img: "feature-do-this-first.jpg", bg: "#d9b791", accent: "#ff5400", title: "Do this first", pills: ["APP · Live prototype", "One next step", "48-hour window"], tags: ["Priority score", "Clear reason", "Momentum"] },
+    ideas: { img: "persona-builder.jpg", fit: "contain", bg: "#fffedf", accent: "#ff5400", ink: "#ff5400", title: "Ideas", pills: ["P2 · Builder / early pro", "Idea → experiment", "3-day first step"], tags: ["Idea inbox", "Experiments", "Park or archive"] },
+    people: { img: "persona-networker.jpg", fit: "contain", bg: "#ffffff", accent: "#ff5400", ink: "#121213", title: "People", pills: ["P3 · Networker / founder", "Context + follow-up", "Drafts from your notes"], tags: ["Contact cards", "Follow-up status", "Reminders"] },
+    progress: { img: "feature-targets.jpg", fit: "contain", bg: "#fefefe", accent: "#ff5400", ink: "#ff5400", title: "Progress", pills: ["ROI · 30-day targets", "Live numbers", "Outcomes per event"], tags: ["Acceptance rate", "Event-to-outcome", "72-hour follow-ups"] }
   };
   var SQUIGGLE = '<path d="M25.002 153.857C25.002 153.857 151.002 -28.0122 236.002 40.3572C351.002 132.857 -86.2292 534.598 62.5019 617.857C173.257 679.857 466.502 -70.1428 646.002 40.3572C889.446 190.221 -74.3269 862.107 151.002 983.857C337.002 1084.36 526.502 453.148 665.002 551.357C803.502 649.566 415.502 926.187 501.002 983.857C586.502 1041.53 703.002 794.357 703.002 794.357" stroke="currentColor" stroke-width="50" stroke-linecap="round"/>';
 
@@ -768,10 +768,11 @@
     var hero = $("#hero");
     hero.style.setProperty("--hero-bg", m.bg);
     hero.style.setProperty("--hero-accent", m.accent);
-    hero.innerHTML = '<img class="hero-img" src="' + IMG + m.img + '" alt="">' +
+    hero.classList.toggle("is-contain", !!m.fit);
+    hero.innerHTML = '<img class="hero-img" src="' + IMG + m.img + '" alt=""' + (m.fit ? ' style="object-fit:' + m.fit + ';object-position:center 30%"' : "") + ">" +
       '<svg class="hero-squiggle" viewBox="0 0 728 1020" fill="none" aria-hidden="true">' + SQUIGGLE + "</svg>" +
       '<div class="hero-pills">' + m.pills.map(function (p) { return '<span class="hero-pill">' + esc(p) + "</span>"; }).join("") + "</div>" +
-      '<h1 class="hero-title"><span class="line-mask"><span class="hero-title-text">' + esc(m.title) + "</span></span></h1>";
+      '<h1 class="hero-title"' + (m.ink ? ' style="color:' + m.ink + '"' : "") + '><span class="line-mask"><span class="hero-title-text">' + esc(m.title) + "</span></span></h1>";
     fitHeroTitle();
   }
   function fitHeroTitle() {

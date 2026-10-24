@@ -197,6 +197,7 @@ button { font: inherit; }
   background: linear-gradient(180deg, rgba(18, 18, 19, 0) 45%, rgba(18, 18, 19, 0.28) 100%);
   z-index: 1;
 }
+.hero.is-contain::after { display: none; }
 .hero-squiggle {
   position: absolute;
   z-index: 2;
